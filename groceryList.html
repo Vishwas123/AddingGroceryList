@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 1910px;
+    height: 930px;
+    background-color: green;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.flex-item {
+    background-color: lightgrey;
+    width: 1012px;
+    height: 904px;
+    margin: 10px;
+}
+div.{
+	font-size:10000px;
+}
+table{font-size:30px;}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script>
+
+
+$(document).ready(function(){
+var data = [
+];
+
+var output="";
+
+for (var i in data){
+  output+="<li>" + data[i].name + "</li>";
+}
+  document.getElementById("prevData").innerHTML=output;
+  
+  
+  
+  
+  $( "#submitId" ).click(function() {
+  
+  if($.trim($('#tnameId').val()) == ''){
+      alert('Task is not valid');
+	  return;
+   }
+   
+  
+  
+  output+="<li>" + $('#tnameId').val() + "</li>";
+  document.getElementById("prevData").innerHTML=output;
+  
+  $('#tnameId').val('');
+  
+});
+  
+});
+
+
+
+</script>
+</head>
+<body>
+
+<div class="flex-container">
+<div class="flex-item"><center>
+<h1>Grocery List</h1>
+<p>v2.0</p>
+
+<h2>Create A Task</h2> <br>
+Item Name: <br><input type="text" id="tnameId"><br>
+ <button id="submitId">Add</button></center>
+
+
+</div>
+<div class="flex-item">
+<center>
+<h2>Items Added are:</h2>
+<div id="prevData">
+</center>
+</div>
+</div>
+<div>
+
+
+
+</div>
+</body>
+</html>
